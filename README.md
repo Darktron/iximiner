@@ -42,7 +42,7 @@ make -j$(nproc)
 
 Usage Example:
 ```
-~/iximiner/build/iximiner --mode miner --pool https://mineixi.com --wallet 4ZbeoZLuBtM4Xfoguzp1HTqxGSF86yWVTgam4LYDwQRzj9wCuCmpH4o9vf2NBTxh2 --name D700 --gpu-intensity 0 --cpu-intensity 100
+~/iximiner/build/iximiner --mode miner --pool https://mineixi.com --wallet 4ZbeoZLuBtM4Xfoguzp1HTqxGSF86yWVTgam4LYDwQRzj9wCuCmpH4o9vf2NBTxh2 --name D700 --cpu-intensity 100
 ```
 
 ## Basic usage:  

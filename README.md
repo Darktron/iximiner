@@ -28,13 +28,13 @@ What you need:
 
 Instructions:
 - run the following snippet:
-```sh
-$ git clone http://github.com/bogdanadnan/iximiner.git
-$ cd iximiner
-$ mkdir build
-$ cd build
-$ cmake .. -DCMAKE_BUILD_TYPE=Release -DUSE_SYSTEM_CURL=1 -DBUILD_CPR_TESTS=0
-$ make
+```
+git clone http://github.com/Darktron/iximiner.git
+cd iximiner
+mkdir build
+cd build
+cmake ~/iximiner/build -DCMAKE_BUILD_TYPE=Release -DUSE_SYSTEM_CURL=1 -DBUILD_CPR_TESTS=0 -DWITHOUT_CUDA=ON -DWITHOUT_OPENCL=ON
+make
 ```
 
 ## Basic usage:  

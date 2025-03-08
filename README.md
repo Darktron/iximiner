@@ -29,12 +29,18 @@ What you need:
 Instructions:
 - run the following snippet:
 ```
+pkg install curl git build-essential clang -y
 git clone http://github.com/Darktron/iximiner.git
 cd iximiner
 mkdir build
 cd build
-cmake ~/iximiner/build -DCMAKE_BUILD_TYPE=Release -DUSE_SYSTEM_CURL=1 -DBUILD_CPR_TESTS=0 -DWITHOUT_CUDA=ON -DWITHOUT_OPENCL=ON
-make
+cmake ~/iximiner -DCMAKE_BUILD_TYPE=Release -DUSE_SYSTEM_CURL=1 -DBUILD_CPR_TESTS=0 -DWITHOUT_CUDA=ON -DWITHOUT_OPENCL=ON
+make -j$(nproc)
+```
+
+Usage Example:
+```
+~/iximiner/build/iximiner --mode miner --pool https://mineixi.com --wallet 4ZbeoZLuBtM4Xfoguzp1HTqxGSF86yWVTgam4LYDwQRzj9wCuCmpH4o9vf2NBTxh2 --name D700 --gpu-intensity 0 --cpu-intensity 100
 ```
 
 ## Basic usage:  

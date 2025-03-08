@@ -29,7 +29,9 @@ What you need:
 Instructions:
 - run the following snippet:
 ```
-pkg install curl git build-essential clang -y
+yes | pkg update -y
+yes | pkg upgrade -y
+pkg install curl git wget nano build-essential clang -y
 git clone http://github.com/Darktron/iximiner.git
 cd iximiner
 mkdir build

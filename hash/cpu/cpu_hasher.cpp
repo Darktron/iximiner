@@ -82,10 +82,17 @@ bool cpu_hasher::configure(arguments &args) {
         cpu_set_t cpuset;
         CPU_ZERO(&cpuset);
         CPU_SET(i, &cpuset);
-        int rc = pthread_setaffinity_np(__runners[i]->native_handle(),
-                                        sizeof(cpu_set_t), &cpuset);
+        
+        int rc;
+#ifdef __ANDROID__
+        rc = sched_setaffinity(0, sizeof(cpu_set_t), &cpuset);
+#else
+        rc = pthread_setaffinity_np(__runners[i]->native_handle(),
+                                    sizeof(cpu_set_t), &cpuset);
+#endif
         affinity_error = (rc != 0) ? true : affinity_error;
 #endif
+
     }
 
     if (affinity_error) {
